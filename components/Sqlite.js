@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Keyboard, FlatList } from 'react-native';
 import { Input, ListItem, Button, Icon } from 'react-native-elements';
 import * as SQLite from 'expo-sqlite';
+import { Header } from'react-native-elements';
 
 const db = SQLite.openDatabase("products.db");
 
@@ -48,6 +49,11 @@ export default function Sqlite() {
 
   return (
     <View style={styles.container}>
+      <Header  
+     // leftComponent={{ icon: 'menu', color: '#fff' }}  
+      centerComponent={{ text: 'SHOPPING LIST', style: { color: '#fff' } }}  
+     // rightComponent={{ icon: 'home', color: '#fff'}}
+     />
       <View style={styles.input}>
         <Input
             style={{ paddingLeft: 4,}}
@@ -83,7 +89,7 @@ export default function Sqlite() {
               </ListItem.Content>
               <ListItem.Content>
               <Button
-            onPress={save}
+            onPress1={save}
             title="bought" onPress={() => deleteItem(item.id)} />
               </ListItem.Content>
             </ListItem>)}
@@ -100,6 +106,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   input: {
+    width:"80%",
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20

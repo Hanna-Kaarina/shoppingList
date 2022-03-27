@@ -3,6 +3,8 @@ import { StyleSheet, View, Text, Button, Alert, FlatList } from 'react-native';
 import { Input } from 'react-native-elements';
 import { initializeApp } from 'firebase/app'; //expo install firebase
 import { getDatabase, push, ref, onValue } from 'firebase/database';
+import { Header } from'react-native-elements';
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyDK09x8b4CyuHWwa_BaxQr5WAujEp3DyBg",
@@ -42,6 +44,11 @@ export default function Firebase() {
 
   return (
     <View style={styles.container}>
+       <Header  
+     // leftComponent={{ icon: 'menu', color: '#fff' }}  
+      centerComponent={{ text: 'SHOPPING LIST', style: { color: '#fff' } }}  
+     // rightComponent={{ icon: 'home', color: '#fff'}}
+     />
       <View style={styles.input}>
         <Input
           style={{ paddingLeft: 4,}}
